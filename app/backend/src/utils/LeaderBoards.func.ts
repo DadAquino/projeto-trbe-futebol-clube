@@ -1,6 +1,6 @@
 import { ITeam } from '../Interfaces/Teams/ITeam';
 import { IMatch } from '../Interfaces/Matches/IMatch';
-import { ILeaderboard } from '../Interfaces/Leaderboards/ILeaderboard';
+import { ILeaderboard } from '../Interfaces/LeaderBoards/ILeaderBoards';
 
 // Auxílio do meu colega de turma Allex Thiago e o mentor Pablo
 export default class LeaderboardsFunc {

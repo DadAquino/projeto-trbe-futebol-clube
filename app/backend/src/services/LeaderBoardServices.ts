@@ -1,7 +1,7 @@
-import LeaderboardsFunc from '../utils/Leaderboards.func';
+import LeaderboardsFunc from '../utils/LeaderBoards.func';
 import MatchModel from '../models/MatchModel';
 import { ServiceResponse } from '../Interfaces/ServiceResponse';
-import { ILeaderboard } from '../Interfaces/Leaderboards/ILeaderboard';
+import { ILeaderboard } from '../Interfaces/LeaderBoards/ILeaderBoards';
 import TeamModel from '../models/TeamModel';
 
 // Auxílio do meu colega de turma Allex Thiago

@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import LeaderboardsController from '../controllers/LeaderboardsController';
+import LeaderboardsController from '../controllers/LeaderBoardController';
 
 // Auxílio do meu colega Allex Thiago
 const leaderboardsController = new LeaderboardsController();

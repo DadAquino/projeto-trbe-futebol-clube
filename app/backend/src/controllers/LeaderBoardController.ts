@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import LeaderboardsService from '../services/LeaderboardService';
+import LeaderboardsService from '../services/LeaderBoardServices';
 
 // Auxílio do meu colega
 export default class LeaderboardsController {
