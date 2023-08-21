@@ -1,5 +1,5 @@
 import * as bcrypt from 'bcryptjs';
-import UserModel from '../models/UserModel';
+import UserModel from '../models/UserMoldel';
 import { IUser, IUserResponse, ILogin } from '../Interfaces/Users/IUser';
 import { IUserModel } from '../Interfaces/Users/IUserModel';
 import { ServiceResponse, ServiceMessage } from '../Interfaces/ServiceResponse';
