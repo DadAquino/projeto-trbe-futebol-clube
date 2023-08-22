@@ -7,6 +7,25 @@ import Teams from '../database/models/TeamModel';
 class Validations {
   private static teamModel = Teams;
 
+  static userValidator(req: Request, res: Response, next: NextFunction): Response | void {
+    const user = req.body;
+
+    const requiredFieldKeys = [
+      'username',
+      'role',
+      'email',
+      'password',
+    ];
+
+    const fieldKeyNotGiven = requiredFieldKeys.find((key) => !(key in user));
+
+    if (fieldKeyNotGiven) {
+      return res.status(400).json({ message: `${fieldKeyNotGiven} is required` });
+    }
+
+    next();
+  }
+
   static validateLogin(req: Request, res: Response, next: NextFunction): Response | void {
     const { email, password } = req.body;
     if (!email || !password) {
