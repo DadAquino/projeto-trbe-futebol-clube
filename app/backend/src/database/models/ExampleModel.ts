@@ -21,9 +21,9 @@ Example.init({
     autoIncrement: true,
   },
 }, {
-    sequelize: db,
-    modelName: 'trybeEval',
-    timestamps: false,
+  sequelize: db,
+  modelName: 'trybeEval',
+  timestamps: false,
 });
 
 /**
