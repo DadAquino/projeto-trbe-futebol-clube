@@ -1,4 +1,3 @@
-
 import SequelizeUser from '../database/models/Sequelize.User';
 import IUsersModel from '../Interfaces/users/IUsersModel';
 import IUsers from '../Interfaces/users/IUsers';

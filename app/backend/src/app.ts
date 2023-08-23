@@ -27,6 +27,7 @@ class App {
     this.app.use(express.json());
     this.app.use(accessControl);
   }
+
   public start(PORT: string | number): void {
     this.app.listen(PORT, () => console.log(`Running on port ${PORT}`));
   }
