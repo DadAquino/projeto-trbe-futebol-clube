@@ -6,10 +6,10 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY ./ ./
+COPY . .
 
 EXPOSE 3000
 
 ENTRYPOINT [ "npm", "run" ]
 
-CMD [ "start" ]
+CMD ["start"]

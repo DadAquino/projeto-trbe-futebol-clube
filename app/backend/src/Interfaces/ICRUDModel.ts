@@ -1,23 +1,21 @@
-import { ID } from '.';
+import NewEntity from './NewEntity';
 
-export interface ICRUDModelCreator<T> {
-  create(data: Partial<T>): Promise<T>,
-}
-
-export interface ICRUDModelReader<T> {
+export interface ReaderICRUDModel<T> {
   findAll(): Promise<T[]>,
-  findById(id: ID): Promise<T | null>,
-  findByEmail(email: string): Promise<T | null>,
+  findById(id: number): Promise<T | null>,
 }
 
-export interface ICRUDModelUpdater<T> {
-  update(id: ID, data: Partial<T>): Promise<T | null>,
+export interface CreatorICRUDModel<T> {
+  create(data: NewEntity<T>): Promise<T>,
 }
 
-export interface ICRUDModelDeleter {
-  delete(id: ID): Promise<number>,
+export interface UpdateICRUDModel<T> {
+  update(id: number, data: Partial<T>): Promise<T | null>,
 }
 
 export interface ICRUDModel<T>
-  extends ICRUDModelCreator<T>, ICRUDModelReader<T>, ICRUDModelUpdater<T>,
-  ICRUDModelDeleter { }
+  extends
+  ReaderICRUDModel<T>,
+  CreatorICRUDModel<T>,
+  UpdateICRUDModel<T>
+{ }

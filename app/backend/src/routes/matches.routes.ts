@@ -1,30 +1,31 @@
-import { Request, Response, Router } from 'express';
-import MatchController from '../controllers/MatchController';
-import Validations from '../middlewares/Validations';
+import { Request, Router, Response } from 'express';
+import MatchController from '../controllers/match.controller';
+
+import Middleware from '../middlewares/validator.middleware.ts';
 
 const matchController = new MatchController();
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => matchController.getAllmatches(req, res));
-
 router.post(
   '/',
-  Validations.validateToken,
-  Validations.validateTeams,
+  Middleware.tokenValidator,
+  Middleware.teamValidator,
   (req: Request, res: Response) => matchController.createMatch(req, res),
 );
 
 router.patch(
-  '/:id/finish',
-  Validations.validateToken,
-  (req: Request, res: Response) => matchController.updateFinishMatch(req, res),
-);
-
-router.patch(
   '/:id',
-  Validations.validateToken,
+  Middleware.tokenValidator,
   (req: Request, res: Response) => matchController.updateMatch(req, res),
 );
+router.patch(
+  '/:id/finish',
+  Middleware.tokenValidator,
+  (req: Request, res: Response) => matchController.finishMatch(req, res),
+);
+
+router.get('/', (req: Request, res: Response) => matchController.getAllMatches(req, res));
+router.get('/:id', (req: Request, res: Response) => matchController.getByIdMatch(req, res));
 
 export default router;

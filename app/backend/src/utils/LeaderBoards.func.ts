@@ -1,5 +1,5 @@
-import { ITeam } from '../Interfaces/Teams/ITeam';
-import { IMatch } from '../Interfaces/Matches/IMatch';
+import { ITeam } from '../Interfaces/teams/ITeam';
+import { IMatch } from '../Interfaces/matches/IMatch';
 import { ILeaderboard } from '../Interfaces/LeaderBoards/ILeaderBoards';
 
 // Auxílio do meu colega de turma Allex Thiago e o mentor Pablo

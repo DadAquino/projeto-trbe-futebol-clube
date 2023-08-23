@@ -1,14 +1,22 @@
-import { Router } from 'express';
-import UsersController from '../controllers/UserController';
-import Validations from '../middlewares/Validations';
+import { Request, Router, Response } from 'express';
+import UserController from '../controllers/user.controller';
 
-const userController = new UsersController();
+import Middleware from '../middlewares/validator.middleware.ts';
+
+const userController = new UserController();
 
 const router = Router();
 
-router.post('/', Validations.validateLogin, (req, res) => userController.login(req, res));
+router.post(
+  '/',
+  Middleware.loginValidator,
+  (req: Request, res: Response) => userController.login(req, res),
+);
 
-// Auxílio do meu mentor Pablo e meu colega de turma Allex Thiago
-router.get('/role', Validations.validateToken, (req, res) => UsersController.getRole(req, res));
+router.get(
+  '/role',
+  Middleware.tokenValidator,
+  (req: Request, res: Response) => UserController.role(req, res),
+);
 
 export default router;
